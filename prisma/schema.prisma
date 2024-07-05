@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://avnadmin:AVNS_ifGt4S51XOzwkHxd6li@mysql-1e65a4df-riyajain2950-4c35.c.aivencloud.com:14739/defaultdb"
+}
+model User{
+  id Int @id @default(autoincrement())
+  email String  @unique
+  password String 
+}
+model Refer {
+  id    Int     @id @default(autoincrement())
+  email String  
+  name  String?
+  
+}
